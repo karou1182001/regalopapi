@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="sectiontitle">
+        <p style ="text-shadow: 2px 1px white" class="heading underline font-x2">ACERTIJO 5</p>
+    </div> 
+    <div class="text-center">
+        <img class="inspace-15 borderedbox" src="static/assets/acertijo5.png" class="rounded">
+    </div>
+    <p></p>
+    <div class="row">
+        <div class="col-md-4">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{message}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <div class="card card-body">
+                <form method= 'POST'>
+                    <div class="form-group">
+                        <input type="text" name = "password" placeholder="Respuesta" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" formaction="/respuesta_a5" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
+            </div>
+            <br>
+            <br>
+            <a class="btn btn-primary" href="/acertijo4" role="button">Regresar</a>
+        </div>
+    </div>
+
+{% endblock %}
